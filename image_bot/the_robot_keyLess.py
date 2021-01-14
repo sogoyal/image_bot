@@ -18,9 +18,10 @@ auth = tp.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_secret)
 api = tp.API(auth)
 
+#change the working directory to the images folder
 os.chdir('images')
 
 # iterates over pictures in target folder, posts them to twitter at a fixed interval
-for model_image in os.listdir('.'):
-    api.update_with_media(image)
+for images in os.listdir('.'):
+    api.update_with_media(images)
     time.sleep(60)
